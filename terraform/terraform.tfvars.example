@@ -1,0 +1,68 @@
+# ==============================================================================
+# Sample terraform.tfvars configuration
+# Rename to terraform.tfvars or pass variables via environment (BTP_*)
+# ==============================================================================
+
+# Global Account Subdomain (from SAP BTP Cockpit)
+globalaccount = "your-global-account-subdomain"
+
+# ------------------------------------------------------------------------------
+# For SAP BTP Trial Accounts:
+# Set create_subaccount = false (uses your existing "trial" subaccount)
+# ------------------------------------------------------------------------------
+create_subaccount = false
+subaccount_name   = "trial"
+# Optional: explicitly provide the subaccount GUID if you know it
+# subaccount_id   = "00000000-0000-0000-0000-000000000000"
+
+# ------------------------------------------------------------------------------
+# Cloud Foundry Configuration (Optional)
+# ------------------------------------------------------------------------------
+enable_cloud_foundry = false
+cf_org_name          = "trial-cf-org"
+cf_plan_name         = "trial"
+cf_managers          = [
+  # "your-email@example.com"
+]
+
+# ------------------------------------------------------------------------------
+# Entitlements to assign to the subaccount
+# ------------------------------------------------------------------------------
+entitlements = [
+  # Example: Destination service (lite plan in trial)
+  # {
+  #   service_name = "destination"
+  #   plan_name    = "lite"
+  # },
+  # Example: Authorization and Trust Management service
+  # {
+  #   service_name = "xsuaa"
+  #   plan_name    = "application"
+  # }
+]
+
+# ------------------------------------------------------------------------------
+# Subaccount Destinations
+# ------------------------------------------------------------------------------
+destinations = {
+  # "Northwind_API" = {
+  #   url            = "https://services.odata.org/v4/northwind/northwind.svc/"
+  #   type           = "HTTP"
+  #   proxy_type     = "Internet"
+  #   authentication = "NoAuthentication"
+  #   description    = "Public OData test service"
+  # }
+}
+
+# ------------------------------------------------------------------------------
+# Role Collections & User Assignments
+# ------------------------------------------------------------------------------
+role_collections = {}
+
+role_collection_assignments = [
+  # {
+  #   role_collection_name = "Subaccount Administrator"
+  #   user_name            = "your-email@example.com"
+  #   origin               = "sap.default"
+  # }
+]

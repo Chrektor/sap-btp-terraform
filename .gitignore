@@ -1,0 +1,27 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+*.tfvars
+!terraform.tfvars.example
+.terraform.lock.hcl.bak
+
+# Secrets and Environment Files
+.env
+env.sh
+*.secret
+*.pem
+*.key
+
+# CLI Caches and logs
+.btp/
+.cf/
+*.log
+crash.log
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
