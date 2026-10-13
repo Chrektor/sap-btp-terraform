@@ -62,7 +62,7 @@ variable "subaccount_description" {
 variable "subaccount_labels" {
   type        = map(list(string))
   description = "Labels to assign to the subaccount"
-  default     = {
+  default = {
     environment = ["dev"]
     managed_by  = ["terraform"]
   }
@@ -122,11 +122,11 @@ variable "entitlements" {
 
 variable "destinations" {
   type = map(object({
-    url            = string
-    type           = optional(string, "HTTP")
-    proxy_type     = optional(string, "Internet")
-    authentication = optional(string, "NoAuthentication")
-    description    = optional(string, "Managed by Terraform")
+    url                      = string
+    type                     = optional(string, "HTTP")
+    proxy_type               = optional(string, "Internet")
+    authentication           = optional(string, "NoAuthentication")
+    description              = optional(string, "Managed by Terraform")
     additional_configuration = optional(map(string), {})
   }))
   description = "Map of subaccount-level destinations to configure"
